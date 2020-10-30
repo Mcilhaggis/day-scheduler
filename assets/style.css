@@ -21,11 +21,11 @@ textarea{
   border-radius: 0;
   border-bottom: 10px solid black;
 }
-/*WHAT IS THIS??*/
+/*Scroll bar if the text is too long*/
 .description{
   white-space: pre-wrap;
 }
-/*WHAT IS THIS*/
+/*Applied to whole row*/
 .time-block{ 
   text-align: center;
   border-radius: 15px;
