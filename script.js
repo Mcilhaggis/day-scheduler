@@ -100,13 +100,16 @@ function renderBlocks(){
     //looping over blocks on the left 
     $(".hour").each(function(){
     //grabbing the hour value and placing in a variable 
-    var hourBlock = ($(this).attr("data-time"));
+    var hourCheck = ($(this).attr("data-time"));
     console.log(hourBlock);
+     if (hourCheck === ""){
+        return;
+     } else {
+        $(".description").val(localstorage.getItem(i)) 
+     }
         //checking if the hour value is stored in local storage
-        //if not there, return
-        // if (hourBlock === ""){
-        //     return;
-        // }
+
+
         //retrieve data if stored
         //populate the middle block 
     });
