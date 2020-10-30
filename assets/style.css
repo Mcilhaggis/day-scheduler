@@ -1,9 +1,10 @@
+/*Sets the overall design*/
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
-
+/*Sets the styling for the area that the text input goes*/
 textarea{
   background: transparent;
   border: none;
@@ -12,7 +13,7 @@ textarea{
   border-left: 1px solid black;
   padding: 10px;
 }
-
+/*Styling the jumbotron at the top of the page*/
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -20,52 +21,58 @@ textarea{
   border-radius: 0;
   border-bottom: 10px solid black;
 }
-
+/*Scroll bar if the text is too long*/
 .description{
   white-space: pre-wrap;
 }
-
-.time-block{
+/*Applied to whole row*/
+.time-block{ 
   text-align: center;
   border-radius: 15px;
 }
-
+/*Sets row for each hour block grouping*/
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;;
 }
-
+/*Styles the hour box on the left*/
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
 }
-
+/*Colour for blocks in the past*/
 .past {
   background-color: #d3d3d3;
   color: white;
 }
-
+/*Colour for current hour block*/
 .present {
   background-color: #ff6961;
   color: white;
 }
-
+/*Colour for the block in the future*/
 .future {
   background-color: #77dd77;
   color: white;
 }
-
+/*Styles the save button on the right of the blocks*/
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
+  align-items: center;
   color: white;
-}
 
+}
+/*Sets hover for save button*/
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+.floppy{
+  max-height: 60%;
 }
