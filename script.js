@@ -11,8 +11,7 @@ dateDisplay.innerHTML = (today.format("dddd, MMMM Do YYYY, h:mm:ss a"));
 //Creating the time block elements dynamically
 $(document).ready(function(){
 
-    //Pulling previously stored data
-    renderBlocks();    
+  
 
     var hours = ["8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"]
     for (i = 0; i < hours.length; i++){
@@ -69,7 +68,8 @@ $(document).ready(function(){
         //appending everything to the container
         $("#container").append(timeSlot); 
 
-        
+    //Pulling previously stored data
+    renderBlocks(); 
     }
 
     
@@ -100,16 +100,21 @@ function renderBlocks(){
     //looping over blocks on the left 
     $(".hour").each(function(){
     //grabbing the hour value and placing in a variable 
-    var hourBlock = ($(this).attr("data-time"));
-    console.log(hourBlock);
+    var hourCheck = ($(this).attr("data-time"));
+    console.log(hourCheck);
+
+
+    if (localStorage.getItem(hourCheck)){
+        console.log("exists");
+    }
+
+
+    });
         //checking if the hour value is stored in local storage
         //if not there, return
-        // if (hourBlock === ""){
-        //     return;
-        // }
         //retrieve data if stored
         //populate the middle block 
-    });
+   // });
 }
 //adds value from !how to select particular mid block! .val(localstorage.getItem(i)) 
 })
