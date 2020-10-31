@@ -37,7 +37,7 @@ $(document).ready(function(){
         var btn = $("<button>");
         btn.addClass("saveBtn col-md-1");
 
-            //LOCAL STORAGE SAVING STEPS
+            //LOCAL STORAGE SAVING STEPS - creating in save button before appending to the page
             btn.on("click", function(event){
             console.log("I'm clicked");
             event.preventDefault();
@@ -55,6 +55,10 @@ $(document).ready(function(){
 
 
 })
+
+
+
+        //ADDING BUTTONS TO TIME SLOT
         timeSlot.append(btn);
         
 
@@ -65,12 +69,13 @@ $(document).ready(function(){
         floppy.attr("alt", "icon of floppy disc");
         btn.append(floppy);
         
+
+
         //appending everything to the container
         $("#container").append(timeSlot); 
-
-    //Pulling previously stored data
-    renderBlocks(); 
     }
+            //LOCAL STORAGE RETRIEVING DATA FUNCTION - Pulling and filling previously stored data to middleBlock
+            renderBlocks(); 
 
     
 console.log(today.format("hA"));
@@ -98,23 +103,21 @@ $(".description").each(function(){
 
 function renderBlocks(){
     //looping over blocks on the left 
-    $(".hour").each(function(){
-    //grabbing the hour value and placing in a variable 
-    var hourCheck = ($(this).attr("data-time"));
-    console.log(hourCheck);
-
-
-    if (localStorage.getItem(hourCheck)){
-        console.log("exists");
-    }
+    $(".hour").each(function(i, obj){
+        //the current div has a time 
+       var hourValueAsKey = $(obj).attr("data-time")
+       //check the local storage for if the current time has a key, and therefor a value
+        var storageKeyCheck = localStorage.getItem(hourValueAsKey);
+        //if null return
+        if (storageKeyCheck === null){
+            return;
+        } else {
+            ($(this).siblings(".description").append(storageKeyCheck));
+        };
+     
 
 
     });
-        //checking if the hour value is stored in local storage
-        //if not there, return
-        //retrieve data if stored
-        //populate the middle block 
-   // });
+
 }
-//adds value from !how to select particular mid block! .val(localstorage.getItem(i)) 
 })
