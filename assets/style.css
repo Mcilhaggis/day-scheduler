@@ -21,13 +21,14 @@ textarea{
   border-radius: 0;
   border-bottom: 10px solid black;
 }
-/*Scroll bar if the text is too long*/
+/*Scroll bar to wrap the text in the textarea if the text is too long*/
 .description{
   white-space: pre-wrap;
 }
-/*Applied to whole row*/
+/*Applied to whole row for styling */
 .time-block{ 
   text-align: center;
+  justify-content: center;
   border-radius: 15px;
 }
 /*Sets row for each hour block grouping*/
@@ -73,6 +74,7 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
+/*adds icon image to save button*/
 .floppy{
   max-height: 60%;
 }
